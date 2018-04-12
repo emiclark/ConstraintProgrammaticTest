@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         setupConstraints(square: sq1)
         
         // add touch gesture
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap( _:, square: Square)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap( _:, square: Square))) 
         sq1.square.addGestureRecognizer(tap)
         sq1.square.isUserInteractionEnabled = true
     }
