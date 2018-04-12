@@ -79,10 +79,18 @@ class ViewController: UIViewController {
         ])
         
         
-        UIView.animateKeyframes(withDuration: 1.0, delay: 0, options: [.calculationModePaced], animations: {
+        UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: [.calculationModePaced], animations: {
             // Add animations
+
+            UIView.addKeyframe(withRelativeStartTime: 0.0/0.0, relativeDuration: 0.0/0.25, animations: {
+                self.square.transform = CGAffineTransform.identity.scaledBy(x: 1.25, y: 1.25)
+            })
             
-            UIView.addKeyframe(withRelativeStartTime: 0.0/0.5, relativeDuration: 0.0/0.5, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.0/0.0, relativeDuration: 0.0/0.25, animations: {
+                self.square.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0)
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.0/0.25, relativeDuration: 0.0/0.25, animations: {
                 self.square.layer.cornerRadius = self.squareSide/2
             })
 
@@ -117,3 +125,15 @@ class ViewController: UIViewController {
 //            UIViewPropertyAnimator( duration: 0.5, curve: .easeInOut) {
 //                self.square.layer.cornerRadius = self.squareSide/2
 //            }.startAnimation()
+
+
+//            UIView.addKeyframe(withRelativeStartTime: 0.0/0.25, relativeDuration: 0.0/0.25, animations: {
+//                self.square.layer.frame.size.width = self.square.layer.frame.size.width + 50
+//                self.square.layer.frame.size.height = self.square.layer.frame.size.height + 50
+//            })
+//
+//            UIView.addKeyframe(withRelativeStartTime: 0.0/0.25, relativeDuration: 0.0/0.25, animations: {
+//                self.square.layer.frame.size.width = self.square.layer.frame.size.width - 10
+//                self.square.layer.frame.size.height = self.square.layer.frame.size.height - 10
+//            })
+
