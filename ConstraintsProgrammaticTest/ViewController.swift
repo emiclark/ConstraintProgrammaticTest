@@ -68,22 +68,32 @@ class ViewController: UIViewController {
         // animate square
         self.square.layer.cornerRadius = 16
         animate()
-//        UIViewPropertyAnimator( duration: 0.5, curve: .easeInOut) {
-//            self.square.layer.cornerRadius = self.squareSide/2
-//        }.startAnimation()
     }
 
     func animate() {
-        UIViewPropertyAnimator( duration: 0.5, curve: .easeInOut) {
-            self.square.layer.cornerRadius = self.squareSide/2
-            }.startAnimation()
+
+        self.square.backgroundColor = .green
+        NSLayoutConstraint.activate([
+            self.square.widthAnchor.constraint(equalToConstant: squareSide),
+            self.square.heightAnchor.constraint(equalToConstant: squareSide)
+        ])
         
         
-//        UIView.animateKeyframes(withDuration: 5.0, delay: 0, options: [.calculationModeCubic], animations: {
-//            // Add animations
-//            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1.0/5.0, animations: {
-//                view.frame.origin.x += 200
+        UIView.animateKeyframes(withDuration: 1.0, delay: 0, options: [.calculationModeCubic], animations: {
+            // Add animations
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.0/0.5, relativeDuration: 0.0/0.5, animations: {
+                self.square.layer.cornerRadius = self.squareSide/2
+            })
+
+            UIView.addKeyframe(withRelativeStartTime: 0.5/1.0, relativeDuration: 0.5/1.0, animations: {
+                self.square.backgroundColor = .cyan
+            })
+            
+//          UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1.0/5.0, animations: {
+//                self.square.frame.origin.x += 200
 //            })
+            
 //            UIView.addKeyframe(withRelativeStartTime: 1.0/5.0, relativeDuration: 1.0/5.0, animations: {
 //                view.backgroundColor = .green
 //            })
@@ -98,8 +108,12 @@ class ViewController: UIViewController {
 //            })
 //        }, completion:{ _ in
 //            print("I'm done!")
-//        })
+        })
     }
 
 }
 
+
+//            UIViewPropertyAnimator( duration: 0.5, curve: .easeInOut) {
+//                self.square.layer.cornerRadius = self.squareSide/2
+//            }.startAnimation()
