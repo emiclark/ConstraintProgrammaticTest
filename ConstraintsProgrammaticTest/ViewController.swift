@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         ])
         
         
-        UIView.animateKeyframes(withDuration: 1.0, delay: 0, options: [.calculationModeCubic], animations: {
+        UIView.animateKeyframes(withDuration: 1.0, delay: 0, options: [.calculationModePaced], animations: {
             // Add animations
             
             UIView.addKeyframe(withRelativeStartTime: 0.0/0.5, relativeDuration: 0.0/0.5, animations: {
