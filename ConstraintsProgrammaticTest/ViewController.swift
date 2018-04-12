@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         label.frame = CGRect(x: 0, y: 0, width: 300, height: 20)
         label.font = UIFont(name: "Helvetica", size: 30)
         label.textAlignment = .center
+        label.textColor = UIColor.red
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Click Me!"
         return label
@@ -66,11 +67,39 @@ class ViewController: UIViewController {
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         // animate square
         self.square.layer.cornerRadius = 16
-        UIViewPropertyAnimator( duration: 0.5, curve: .easeInOut) {
-            self.square.layer.cornerRadius = self.squareSide/2
-        }.startAnimation()
+        animate()
+//        UIViewPropertyAnimator( duration: 0.5, curve: .easeInOut) {
+//            self.square.layer.cornerRadius = self.squareSide/2
+//        }.startAnimation()
     }
 
+    func animate() {
+        UIViewPropertyAnimator( duration: 0.5, curve: .easeInOut) {
+            self.square.layer.cornerRadius = self.squareSide/2
+            }.startAnimation()
+        
+        
+//        UIView.animateKeyframes(withDuration: 5.0, delay: 0, options: [.calculationModeCubic], animations: {
+//            // Add animations
+//            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1.0/5.0, animations: {
+//                view.frame.origin.x += 200
+//            })
+//            UIView.addKeyframe(withRelativeStartTime: 1.0/5.0, relativeDuration: 1.0/5.0, animations: {
+//                view.backgroundColor = .green
+//            })
+//            UIView.addKeyframe(withRelativeStartTime: 2.0/5.0, relativeDuration: 1.0/5.0, animations: {
+//                view.frame.origin.y += 200
+//            })
+//            UIView.addKeyframe(withRelativeStartTime: 3.0/5.0, relativeDuration: 1.0/5.0, animations: {
+//                view.transform = CGAffineTransform.identity.scaledBy(x: 2, y: 2)
+//            })
+//            UIView.addKeyframe(withRelativeStartTime: 4.0/5.0, relativeDuration: 1.0/5.0, animations: {
+//                view.alpha = 0
+//            })
+//        }, completion:{ _ in
+//            print("I'm done!")
+//        })
+    }
 
 }
 
