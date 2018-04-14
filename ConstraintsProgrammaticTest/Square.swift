@@ -23,11 +23,11 @@ class Square {
     var label: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: 300, height: 20)
-        label.font = UIFont(name: "Helvetica", size: 30)
+        label.font = UIFont(name: "Helvetica", size: 20)
         label.textAlignment = .center
         label.textColor = UIColor.red
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Click Me!"
+        label.text = "To circle"
         return label
     }()
     
