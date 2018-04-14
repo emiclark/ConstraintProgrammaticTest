@@ -27,7 +27,6 @@ class Square {
         label.textAlignment = .center
         label.textColor = UIColor.red
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "To circle"
         return label
     }()
     
